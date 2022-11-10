@@ -1,27 +1,22 @@
-list = []
-
-items = input("Enter list items: ").split(",")
-list.extend(items)
+list = input("Enter list items: ").split(",")
 print("===========================================================================================")
 
-max = list[0]
-min = list[0]
-for elem in range(1, len(list)):
-    if int(list[elem]) > int(max):
-        max = list[elem]
-    elif int(list[elem]) < int(min):
-        min = list[elem]
+list_int = []
+for elem in range(len(list)):
+    list_int.insert(elem, int(list[elem]))
 
-for elem in list:
-    if elem == max or min:
-        list.remove(elem)
-    continue
+maximum = max(list_int)
+minimum = min(list_int)
 
-sum = 0
-for elem in list:
-    sum += int(elem)
+print(f"The largest element from the list: {maximum};")
+print(f"The smallest element from the list: {minimum};")
 
+for number in list_int:
+    if number == maximum:
+        list_int.remove(number)
+        
+for number in list_int:
+    if number == minimum:
+        list_int.remove(number)
 
-print(f"The largest element from the list: {max};")
-print(f"The smallest element from the list: {min};")
-print(f"\nSum of all other elements: {sum}")
+print(f"\nSum of all other elements: {sum(list_int)}.")
