@@ -1,4 +1,4 @@
-def number_of_letters():
+def number_of_letters(element):
     if element != " ":
         amount = string.count(element)
         print(f"{element} - {amount}; ", end = "")
@@ -8,10 +8,10 @@ string = input("Enter the string: ").lower()
 
 print("All characters in a string: ", end = "")
 for element in set(string):
-    number_of_letters()
+    number_of_letters(element)
 
 print("\n==================================================================================")
 
 print("All sorting characters in a string: ", end = "")
 for element in sorted(set(string)):
-    number_of_letters()
+    number_of_letters(element)
